@@ -35,16 +35,18 @@ It supports:
 2. Install dependencies
    pip install -r requirements.txt
 
-## Data Setup
+### Data Setup
 Ensure the following files are available:
+```
   data/
   ├── nz-addresses_10000_sample.csv
   ├── nz.gpkg
+```
 
 Update paths in the script if needed:
   DATA_FOLDER = '../data'
 
-## Usage
+### Usage
 1. Fetch seismic event history data
    python seismicEventVisual.py -f
 
@@ -78,19 +80,19 @@ Update paths in the script if needed:
     - python seismicEventVisual.py -f
     - python seismicEventVisual.py -p
 
-## Runtime Arguments
-| Argument | Purpose |
-| -f | Fetch and process seismic event history data |
-| -p | Launch dashboard visualisation |
+### Runtime Arguments
+| Argument | Purpose                                      |
+| -f       | Fetch and process seismic event history data |
+| -p       | Launch dashboard visualisation               |
 
-## Example Workflow
+### Example Workflow
 Fetch latest data:
   python seismicEventVisual.py -f
 
 Launch dashboard:
   python seismicEventVisual.py -p
 
-## Dependencies
+### Dependencies
 See requirements.txt. Key libraries include:
 - PyQt5
 - geopandas
@@ -99,7 +101,7 @@ See requirements.txt. Key libraries include:
 - scipy
 - matplotlib
 
-## Notes and Limitations
+### Notes and Limitations
 - GeoNet API availability may affect data retrieval
 - Geospatial libraries may require system level dependencies
 - Large datasets may impact performance
