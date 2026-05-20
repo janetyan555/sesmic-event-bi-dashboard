@@ -6,141 +6,100 @@ New Zealand with correlated history seismic events visualization application,
 to visualise the impacted area and severity of a given event, and any NZ 
 property address with Its historical correlated events.
 
-Outcome
+## Outcome
 Run either:
 - -f to fetch seismic event history data
 - -p to launch the BI dashboard
 
-
-Overview
+## Overview
 This application provides a seismic event visualisation tool for New Zealand, combining GeoNet data with property address mapping.
 It supports:
+- Fetching historical seismic events and intensity data
+- Generating affected area polygons
+- Visualising event impact via an interactive BI dashboard
 
-Fetching historical seismic events and intensity data
-Generating affected area polygons
-Visualising event impact via an interactive BI dashboard
+## Key Components
+- Source_History_Events
+  Fetches seismic event data, intensity (MMI), and station data from GeoNet APIs and outputs structured data.
+- Event_Contour_Map
+  Generates intensity contour maps using inverse distance weighting.
+- NZ_Addresses
+  Identifies and plots affected property addresses.
+- Ui_MainWindow
+  Provides a desktop GUI with integrated Folium visualisation.
 
-
-Key Components
-
-
-Source_History_Events
-Fetches seismic event data, intensity (MMI), and station data from GeoNet APIs and outputs structured data.
-
-
-Event_Contour_Map
-Generates intensity contour maps using inverse distance weighting.
-
-
-NZ_Addresses
-Identifies and plots affected property addresses.
-
-
-Ui_MainWindow
-Provides a desktop GUI with integrated Folium visualisation.
-
-
-
-Installation
+## Installation
 1. Clone repository
-Shellgit clone <your-repo-url>cd <your-repo-folder>Show more lines
+   git clone <your-repo-url>
+   cd <your-repo-folder>
 2. Install dependencies
-Shellpip install -r requirements.txtShow more lines
+   pip install -r requirements.txt
 
-Data Setup
+## Data Setup
 Ensure the following files are available:
 data/
 ├── nz-addresses_10000_sample.csv
 ├── nz.gpkg
 
 Update paths in the script if needed:
-PythonDATA_FOLDER = '../data'Show more lines
+  DATA_FOLDER = '../data'
 
-Usage
+## Usage
 1. Fetch seismic event history data
-Shellpython seismicEventVisual.py -fShow more lines
-What it does:
+   python seismicEventVisual.py -f
 
-Calls GeoNet APIs
-Retrieves earthquake events above threshold
-Extracts intensity and station data
-Generates processed dataset (CSV output)
-
-When to use:
-
-First run
-Data refresh
-Updating event history
-
+  What it does:
+  - Calls GeoNet APIs
+  - Retrieves earthquake events above threshold
+  - Extracts intensity and station data
+  - Generates processed dataset (CSV output)
+  When to use:
+  - First run
+  - Data refresh
+  - Updating event history
 
 2. Run BI Dashboard
-Shellpython seismicEventVisual.py -pShow more lines
-What it does:
+   python seismicEventVisual.py -p
 
-Launches PyQt GUI
-Displays Folium interactive maps
-Visualises:
-
-Seismic intensity contours
-Affected regions
-Property addresses linked to events
-
-
-
-When to use:
-
-Data exploration
-Stakeholder demonstration
-Impact analysis
-
+  What it does:
+  - Launches PyQt GUI
+  - Displays Folium interactive maps
+  - Visualises:
+    - Seismic intensity contours
+    - Affected regions
+    - Property addresses linked to events
+  When to use:
+  - Data exploration
+  - Stakeholder demonstration
+  - Impact analysis
 
 3. Optional: Combined workflow
-Run in sequence:
-Shellpython seismicEventVisual.py -fpython seismicEventVisual.py -pShow more lines
+  Run in sequence:
+  - python seismicEventVisual.py -f
+  - python seismicEventVisual.py -p
 
-Runtime Arguments
+## Runtime Arguments
+|Argument|Purpose|
+|-f|Fetch and process seismic event history data|
+|-p|Launch dashboard visualisation|
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-ArgumentPurpose-fFetch and process seismic event history data-pLaunch dashboard visualisation
-
-Example Workflow
-
+## Example Workflow
 Fetch latest data:
-Shellpython seismicEventVisual.py -fShow more lines
+  python seismicEventVisual.py -f
 
 Launch dashboard:
-Shellpython seismicEventVisual.py -pShow more lines
+  python seismicEventVisual.py -p
 
-
-
-Dependencies
+## Dependencies
 See requirements.txt. Key libraries include:
+- PyQt5
+- geopandas
+- shapely
+- folium
+- scipy
+- matplotlib
 
-PyQt5
-geopandas
-shapely
-folium
-scipy
-matplotlib
-
-
-Notes and Limitations
-
-GeoNet API availability may affect data retrieval
-Geospatial libraries may require system level dependencies
-Large datasets may impact performance
+## Notes and Limitations
+- GeoNet API availability may affect data retrieval
+- Geospatial libraries may require system level dependencies
+- Large datasets may impact performance
