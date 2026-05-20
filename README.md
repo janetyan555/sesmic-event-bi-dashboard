@@ -82,6 +82,7 @@ Update paths in the script if needed:
 
 ### Runtime Arguments
 | Argument | Purpose                                      |
+|----------|----------------------------------------------|
 | -f       | Fetch and process seismic event history data |
 | -p       | Launch dashboard visualisation               |
 
