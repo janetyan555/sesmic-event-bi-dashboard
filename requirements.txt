@@ -1,0 +1,14 @@
+PyQt5>=5.15
+pandas>=1.5
+geopandas>=0.13
+numpy>=1.23
+matplotlib>=3.7
+pytz>=2023.3
+requests>=2.31
+shapely>=2.0
+pyproj>=3.5
+scipy>=1.10
+geojsoncontour>=0.4
+folium>=0.14
+mapclassify>=2.5
+branca>=0.6
